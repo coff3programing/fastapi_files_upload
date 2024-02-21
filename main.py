@@ -1,10 +1,11 @@
 from fastapi import FastAPI
-from routes import router
+from routers import routes
 
 app = FastAPI()
 
-app.include_router(router)
+app.include_router(routes.router)
 
-@app.get('/', tags=['Home'], status_code=200)
+
+@app.get('/', tags=['Welcome'])
 async def get():
     return 'Hello World'
